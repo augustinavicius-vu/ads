@@ -14,10 +14,10 @@ var medis = [
     [7]
 ]
 
-function getNonEmptyArrayIndexes(array) {
-    return array
-        .map((subArray, index) => (subArray.length > 0 ? index + 1: null))
-        .filter(index => index !== null);
+function netusciuMasyvuIndeksai(masyvas) {
+    return masyvas
+        .map((vidinisMasyvas, indeksas) => (vidinisMasyvas.length > 0 ? indeksas + 1: null))
+        .filter(indeksas => indeksas !== null);
 }
 
 function rastiCentra(medis) {
@@ -31,8 +31,8 @@ function rastiCentra(medis) {
             if (laipsniai.includes(i + 1)) medis[i] = [];
         }
 
-        var skaicius = getNonEmptyArrayIndexes(medis);
-        if (skaicius.length == 1 || skaicius.length == 2) return skaicius;
+        var netustiMasyvai = netusciuMasyvuIndeksai(medis);
+        if (netustiMasyvai.length == 1 || netustiMasyvai.length == 2) return netustiMasyvai;
 
         for (var i = 0; i < medis.length; i++) {
             medis[i] = medis[i].filter(medzioLapas => !laipsniai.includes(medzioLapas));
